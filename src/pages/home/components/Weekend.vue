@@ -3,7 +3,7 @@
     <div class="title">周末去哪儿</div>
     <ul>
       <li class="item border-bottom"
-      v-for="item of recommendList"
+      v-for="item of list"
       :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -21,25 +21,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        title: '八达岭长城',
-        desc: '不到长城非好汉'
-      }, {
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        title: '八达岭长城',
-        desc: '不到长城非好汉'
-      }, {
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        title: '八达岭长城',
-        desc: '不到长城非好汉'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -47,14 +30,13 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl';
   .title
-    margin-top: .2rem
     line-height: .8rem
     background: #eee
     text-indent: .2rem
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 57%
     .item-img
       widte: 100%
   .item-info
